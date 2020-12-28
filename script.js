@@ -42,10 +42,9 @@ function newQuote() {
 // Get Quotes From API
 async function getQuotes() {
   showLoadingSpinner();
-  const proxyUrl = 'https://sheltered-ravine-07932.herokuapp.com/'; // CORS-ANYWHERE api
   const apiUrl = 'https://type.fit/api/quotes';
   try {
-    const response = await fetch(proxyUrl + apiUrl);
+    const response = await fetch(apiUrl);
     apiQuotes = await response.json();
     newQuote();
   } catch (error) {
